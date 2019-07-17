@@ -1,9 +1,11 @@
-@import 'reset';
+@import 'config/reset';
 @import 'font-awesome';
 @import "config/colors";
 @import "config/font-size";
 @import "modules/flash";
-@import 'messages';
+@import "messages/messages.scss";
 @import 'user';
 @import 'group';
 @import 'modules/side_bar';
+@import "mixins/mixin";
+@import "mixins/vendor_prefix";
