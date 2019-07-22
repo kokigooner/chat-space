@@ -13,9 +13,9 @@ $(function(){
                 </div>
                 <div class="lower-message">
                 <p class="lower-message__content">
-                ${message.content}
+                ${content}
                 </p>
-                
+                ${img}
                 </div>
                 </div>`
   return html;
@@ -24,8 +24,6 @@ $(function(){
     e.preventDefault();    
     var formdata = new FormData(this);
     var url = $(this).attr('action');
-    console.log(url)
-    console.log(formdata)
 
     $.ajax({
       url: url,
@@ -36,10 +34,9 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data)
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('#message_content').val(''); 
+      $('#message_content')[0].reset; 
       $('.form__submit').prop('disabled', false);
     })
     .fail(function(data){
