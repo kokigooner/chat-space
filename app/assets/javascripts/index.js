@@ -1,5 +1,5 @@
 $(function(){
-
+var adduser_list = $(".js-add-user");
 var search_list = $("#user-search-result");
 function appendUser(user) {
   var html = `<div class="chat-group-user clearfix">
@@ -21,9 +21,9 @@ function appendDeleteBtn(userId, userName){
   var html = `<div class='chat-group-user clearfix js-chat-member' id='${userId}'>
                 <input name='group[user_ids][]' type='hidden' value='${userId}'>
                 <p class='chat-group-user__name'>${userName}</p>
-                <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove id=delete-btn js-remove-btn'>削除</div>
+                <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
               </div>`
-  search_list.append(html);
+  adduser_list.append(html);
 }
   $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
@@ -52,18 +52,14 @@ function appendDeleteBtn(userId, userName){
   });
     
       $(document).on("click", "#add-btn", function () {
-        debugger
-        var input =$("user-search-result").val();
+        var input =$(".user-search-result").val();
           var userId = $(this).data('user-id')
           var userName = $(this).data('user-name')
           appendDeleteBtn(userId, userName)
           $(this).parent().remove();
-      $(document).on("click", ".user-seach-remove", function (){
+        });
+      $(document).on("click", ".user-search-remove", function (){
           $(this).parent().remove();
       }); 
-    });
+  
   });
-
-
-
-
