@@ -1,14 +1,15 @@
 .flash-box
 .wrapper
+  =render 'shared/side_bar'
   .chat-main
     .main-header
       .main-header__left-box
         %h2.main-header__left-box___current-group
-          gooner
+          = @group.name
         %ul.main-header__left-box__member-list
           Member:
           %li.main-header__left-box__member-list__member
-            minegooner
+            = current_user.name
       .main-header__edit-btn
         = link_to 'Edit', edit_group_path(@group)
     .messages

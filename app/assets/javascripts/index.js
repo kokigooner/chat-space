@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load',function(){
 $(function(){
 var adduser_list = $(".js-add-user");
 var search_list = $("#user-search-result");
@@ -63,3 +64,4 @@ function appendDeleteBtn(userId, userName){
       }); 
   
   });
+});
