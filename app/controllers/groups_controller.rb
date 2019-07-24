@@ -28,6 +28,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    
   end
 
   private
