@@ -56,6 +56,7 @@ gem 'haml-rails'
 gem 'devise'
 gem 'pry-byebug'
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'mini_magick'
 gem 'pry-rails'
 group :production do
